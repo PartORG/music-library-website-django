@@ -4,7 +4,7 @@ Music library website made in Python/Django
 **Working functionality:**
 - add new album
 - details of the album
-- ability to edig existing album data
+- ability to edit existing album data
 - ability to delete existing album
 - admin part
 
