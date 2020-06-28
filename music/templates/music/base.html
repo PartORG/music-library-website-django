@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}PartORG{% endblock %}</title>
+	<!-- loads the path to your static files -->
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}">
+	<!-- Bootstrap CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<!-- header -->
+	<!-- 		<div class="navbar-header"> -->
+			<a class="navbar-brand" href="{% url 'music:index' %}">Home</a>
+			<button class="navbar-toggler float-xs-right" type="button" data-toggle="collapse" data-target="#topNavBar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	<!-- 		</div> -->
+			
+			<!-- items -->
+			<div class="collapse navbar-collapse" id="topNavBar">
+				<ul class="navbar-nav">
+					<li class="active">
+						<a class="nav-link" href="{% url 'music:index' %}">
+							<i class="material-icons" aria-hidden="true">album</i>&nbsp;
+							<span class="nav-text">Albums</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="material-icons" aria-hidden="true">library_music</i>&nbsp;
+							<span class="nav-text">Songs</span>
+						</a>
+					</li>
+				</ul>
+
+				<form class="form-inline mx-4 my-2 my-lg-0" role="search" method="get" action="#">
+					<input type="text" class="form-control mr-sm-2" name="q" value="" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>			
+				</form>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="">
+						<a class="nav-link" href="{% url 'music:album-add' %}">
+							<i class="material-icons" aria-hidden="true">add</i>&nbsp;
+							<span class="nav-text">Add Album</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="material-icons" aria-hidden="true">exit_to_app</i>&nbsp;
+							<span class="nav-text">Logout</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	{% block body%}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'music/base.html' %}
+
+{% block title %}Album Details{% endblock %}
+
+{% block body %}
+
+	<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="{{ album.album_logo.url }}" alt="Card image cap" style="width: 100%; height: 250px;">
+		<div class="card-body">
+			<h5 class="card-title">{{ album.album_title }}</h5>
+			<p class="card-text">{{ album.artist }}</p>
+			<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		</div>
+	</div>
+	{% if error_message %}
+		<p><strong>{{ error_message }}</strong></p>
+	{% endif %}
+	{% for song in album.song_set.all %}
+		{{ song.song_title }}
+		{% if song.is_favorite %}
+			<img src="http://icons.iconarchive.com/icons/tatice/operating-systems/16/Etoile-icon.png">
+		{% endif %}
+		<br>
+	{% endfor %}
+
+	<!-- update button -->
+	<form action="{% url 'music:album-update' album.id %}" method="get" style="display: inline;">
+		{% csrf_token %}
+		<input type="hidden" name="album_id" value="{{ album.id }}">
+		<button type="submit" class="btn btn-light btn-sm">
+			<span style="vertical-align: top;"><i class="material-icons" style="font-size:24px">update</i> Edit Album</span>
+		</button>
+	</form>
+
+{% endblock %}
