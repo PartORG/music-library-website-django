@@ -1,4 +1,4 @@
-# table-reservation-django
+# music-library-website-django
 Music library website made in Python/Django
 
 **Working functionality:**
