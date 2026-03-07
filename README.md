@@ -1,4 +1,4 @@
-```markdown
+
 # Music Library Website (Django)
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
