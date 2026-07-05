@@ -19,7 +19,7 @@ A sophisticated Django-based web application to organize and explore your music 
 
 ## How It Works
 
-The Music Library Website is built using Django as the main framework. It includes a RESTful API developed with Django REST Framework, which allows for seamless integration with other applications. The frontend is designed with HTML/CSS/JavaScript, ensuring a responsive and user-friendly experience across devices.
+The project is a Django-based web application for managing a music library. It includes features such as user authentication, music management, an API, responsive design, search functionality, playlist creation, rating/review system, and an admin dashboard. The repository contains a README.md file with detailed instructions on how to set up and run the project, including prerequisites, installation steps, environment setup, and usage examples.
 
 ## Technology Stack
 
